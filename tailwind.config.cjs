@@ -4,5 +4,17 @@ module.exports = {
   theme: {
     extend: {}
   },
-  plugins: [require('daisyui')]
+  plugins: [require('daisyui')],
+
+  // daisyUI config
+  daisyui: {
+    styled: true,
+    themes: true,
+    base: true,
+    utils: true,
+    logs: true,
+    rtl: false,
+    prefix: '',
+    darkTheme: 'corporate'
+  }
 }
