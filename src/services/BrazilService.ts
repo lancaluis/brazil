@@ -13,6 +13,6 @@ export const getBanks = async () => {
 }
 
 export const findBank = async (id: number) => {
-  const response = await apiClient.get(`/banks/v1/${id}'`)
+  const response = await apiClient.get(`/banks/v1/${id}`)
   return response.data
 }
