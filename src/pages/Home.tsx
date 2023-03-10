@@ -3,14 +3,18 @@ import { useQuery } from '@tanstack/react-query'
 
 import { useBank } from 'store/useBank'
 import { getBanks } from 'services/BrazilService'
+import { useNavigate } from 'react-router-dom'
 
 function Home() {
+  const navigate = useNavigate()
+
   const { data } = useQuery(['banks'], async () => await getBanks())
 
   const { bankNumber, setBank } = useBank()
 
   const chooseBank = (e: any) => {
     setBank(e.target.value)
+    navigate('/bank')
   }
 
   return (
