@@ -1,11 +1,12 @@
-import { useQuery } from '@tanstack/react-query'
 import { useBank } from 'store/useBank'
+import { useQuery } from '@tanstack/react-query'
 
-import { findBank } from 'services/BrazilService'
+import { findBankByIdHandler } from 'services/BrazilService'
 
 export function Bank() {
   const bankNumber = useBank((b) => b.bankNumber)
-  const { data } = useQuery(['bank id'], async () => await findBank(bankNumber))
+
+  const { data } = useQuery(['bank_id', bankNumber], findBankByIdHandler)
 
   console.log(data, '/bank')
 
